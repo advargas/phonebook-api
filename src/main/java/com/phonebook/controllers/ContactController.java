@@ -29,7 +29,7 @@ public class ContactController {
         this.contactService = branchService;
     }
 	
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"http://localhost:3000","http://localhost"})
 	@RequestMapping(value = "/contacts", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -37,7 +37,7 @@ public class ContactController {
 		return this.contactService.getAllContacts();
 	}
 	
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"http://localhost:3000","http://localhost"})
 	@RequestMapping(value = "/contacts/{filter}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -45,7 +45,7 @@ public class ContactController {
     	return this.contactService.getContactsByFilter(filter);
 	}
 	
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"http://localhost:3000","http://localhost"})
 	@RequestMapping(value = "/contact", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -53,7 +53,7 @@ public class ContactController {
 		return this.contactService.addContact(contact);
 	}
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"http://localhost:3000","http://localhost"})
 	@RequestMapping(value = "/contact/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
