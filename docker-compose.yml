@@ -1,0 +1,19 @@
+version: '2'
+services:
+   database:
+    container_name: dbserver
+    image: mariadb:latest
+    environment:
+      - MYSQL_DATABASE=phonebook
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+      - "3306:3306"
+   backend:
+    image: phonebook:latest
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
