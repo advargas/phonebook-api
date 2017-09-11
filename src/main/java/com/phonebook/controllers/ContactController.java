@@ -58,8 +58,7 @@ public class ContactController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
 	public boolean deleteContact(@PathVariable Long id) {
-		this.contactService.deleteContact(id);
-		return true;
+		return this.contactService.deleteContact(id);
 	}
 
 }

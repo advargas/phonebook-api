@@ -39,9 +39,13 @@ public class ContactService {
 		return contact;
 	}
 
-	public void deleteContact(Long id) {
+	public boolean deleteContact(Long id) {
 		Contact contact = getContact(id);
-		this.contactRepository.delete(contact);
+		if (contact != null) {
+			this.contactRepository.delete(contact);
+			return true;
+		}
+		return false;
 	}
 
 }
