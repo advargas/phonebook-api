@@ -50,7 +50,7 @@ public class ContactServiceTest {
 		
 		List<Contact> contacts = new ArrayList<>();
 		contacts.add(contact);
-		Mockito.when(contactRepository.findByFilter("and")).thenReturn(contacts);
+		Mockito.when(contactRepository.findByFilter("AND")).thenReturn(contacts);
 		
 		List<Contact> list = contactService.getContactsByFilter("and");
 		Assert.notEmpty(list, "Not empty contacts");
